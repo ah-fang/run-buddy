@@ -3,23 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-.text-left {
-  text-align: left;
-}
 
-.text-right {
-  text-align: right;
-}
 header {
     padding: 20px 35px;
     background: #39a6b2;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
 header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
-    display: inline;
   }
   
 header a {
@@ -27,33 +23,43 @@ header a {
     text-decoration: none;
   }  
 header nav {
-    float: right;
     margin: 7px 0;
 }
 
-header nav ul li {
-    display: inline;
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
 }
+
 header nav ul li a {
   padding: 10px 15px;
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 1.55vw;
 }
-.hero-form>h3 {
-   font-size: 36px; 
+.hero-form h3 {
+   font-size: 24px; 
 }
 section {
     padding: 60px;
 }
 .hero {
-    background-image: url("../images/hero-bg.jpg");
-    height: 600px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    align-items: flex-start;
-  }
+  background-image: url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
 .hero-cta {
+  width: 35%;
+  text-align: right;
+  margin: 3.5%;
+  color: #fff;
+  font-size: 18px;
   line-height: 1.2;
 }
 .hero-cta h2 {
@@ -66,13 +72,10 @@ section {
 .hero-form {
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
+    width: 40%;
     color: #024e76;
     border: solid 3px #024e76;
     border-radius: 10px;
-    /* position: absolute; */
-    bottom: 120px;
-    right: 140px;
     filter: drop-shadow(0 0 0.5rem #024e76);
   }
 .hero-form p {
@@ -102,18 +105,16 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     /* background-color: tomato; */
   }
-.intro {
-    text-align: center;
-}
+
 .intro p {
   line-height: 1.7;
   color: #39a6b2;
   width: 80%;
   font-size: 20px;
   margin: 0 auto;
+  text-align: center;
 }
 .steps {
-  text-align: center;
   background: #fce138;
 }
 .steps div {
@@ -139,9 +140,10 @@ body {
   font-size: 48px;
   color: #024e76;
   margin-bottom: 35px;
-  padding: 0 100px 20px 100px;
-  display: inline-block;
+  padding-bottom: 20px;
   border-bottom: 3px solid;
+  text-align: center;
+  width: 50%;
 }
 
 .primary-border {
@@ -214,18 +216,21 @@ body {
   width: 400px;
   height: 400px;
 }
+
+/* footer styles */
 footer {
   background: #fce138;
   width: 100%;
   padding: 40px 35px; 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 footer h2 {
-    display: inline;
     color: #024e76;
     font-size: 30px;
 }
 footer div {
-    float: right;
     line-height: 1.5;
     text-align: right;
   }
@@ -275,8 +280,69 @@ footer a {
 }
 
 @media screen and (max-width: 768px) {
+  section {
+    padding: 30px 15px;
+  }
 
+  .step {
+    margin: 50px auto;
+    padding-bottom: 50px;
+    width: 80%;
+    border-bottom: 1px solid #39a6b2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }  
+
+  .step h3 {
+    flex: 1 30%;
+    text-align: center;
+    font-size: 46px;
+  }
+
+  .step-info {
+    flex: 2 70%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .step-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-text {
+    flex: 100%;  
+  }
 }
 @media screen and (max-width: 575px) {
+  .hero-form button {
+    width: 100%;
+  }
 
+  .section-title {
+    width: 95%;
+  }
+
+  .intro p {
+    width: 100%;
+  }
+
+  .trainer {
+    flex: 0 100%;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info > * {
+    flex: 0 100%;
+  }  
+  .contact-form {
+    order: 3;
+  }
 }
