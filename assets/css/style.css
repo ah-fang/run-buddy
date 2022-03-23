@@ -117,6 +117,18 @@ body {
 .steps {
   background: #fce138;
 }
+
+.step {
+  margin: 50px auto;
+  padding-bottom: 50px;
+  width: 80%;
+  border-bottom: 1px solid #39a6b2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .steps div {
   margin-bottom: 80px;
 }
@@ -240,7 +252,7 @@ footer a {
 
 @media screen and (max-width: 980px) {
   header {
-    padding-bottom: 10px;
+    padding-bottom: 0;
     justify-content: center;
   }
   header h1 {
@@ -283,29 +295,16 @@ footer a {
   section {
     padding: 30px 15px;
   }
-
-  .step {
-    margin: 50px auto;
-    padding-bottom: 50px;
-    width: 80%;
-    border-bottom: 1px solid #39a6b2;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }  
-
+  
   .step h3 {
-    flex: 1 30%;
+    flex: 1 100%;
     text-align: center;
-    font-size: 46px;
   }
 
   .step-info {
-    flex: 2 70%;
-    display:flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
   }
   .step-img {
     flex: 0 32%;
