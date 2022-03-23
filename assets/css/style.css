@@ -18,6 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #39a6b2;
   }
 
 header h1 {
@@ -44,7 +45,7 @@ header nav ul {
   list-style: none;
 }
 header nav ul li {
-    display: inline;
+  display: inline;  
 }
 header nav ul li a {
     margin: 0 30px;
