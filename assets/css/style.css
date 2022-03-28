@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+  --primary-color: #fce138;
+  --secondary-color: #024e76;
+  --tertiary-color: #39a6b2;
+}
 
 .text-right {
   text-align: right;
@@ -15,17 +20,18 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
+    z-index: 999;
   }
 
 header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
   }
   
 header a {
-    color: #fce138;
+    color: var(--primary-color);
     text-decoration: none;
   }  
 header nav {
@@ -69,65 +75,125 @@ section {
   line-height: 1.2;
 }
 .hero-cta h2 {
-  color:#fce138;
+  color:var(--primary-color);
   font-style: italic;
 }
 .hero-cta p {
   color: #fff;
 }
 .hero-form {
-    background-color: #fce138;
+    background-color: var(--primary-color);
     padding: 20px;
     width: 40%;
     margin: 3.5%;
-    color: #024e76;
-    border: solid 3px #024e76;
+    color: var(--secondary-color);
+    border: solid 3px var(--secondary-color);
     border-radius: 10px;
-    filter: drop-shadow(0 0 0.5rem #024e76);
+    filter: drop-shadow(0 0 0.5rem var(--secondary-color));
   }
 .hero-form p {
     margin: 5px 0 15px 0;
 }
 .form-input {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
-  }
-  .hero-form label {
+}
+
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+  position: relative;
+  left: 10px;
+  margin: 10px;
+  line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);  
+  border: 1px solid var(--secondary-color);  
+  position: absolute;
+  top: -4px;
+  left: -30px;
+}
+.radio-wrapper label::before {
+  border-radius: 50%;
+}
+
+.radio-wrapper label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  position: absolute;
+  left: -29px;
+  top: -3px;
+  background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+}
+
+.checkbox-wrapper label::after {
+  content: "";
+  height: 6px;
+  width: 14px;
+  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  position: absolute;
+  left: -26px;
+  top: 1px;
+  transform: rotate(-58deg);
+}
+
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
+
+.hero-form label {
     margin: 0 5px;  
-  }
+}
   .hero-form button {
-    color: #fce138;
-    background-color: #024e76;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
   }
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
     /* background-color: tomato; */
   }
 .intro p {
   line-height: 1.7;
-  color: #39a6b2;
+  color: var(--tertiary-color);
   width: 80%;
   font-size: 20px;
   margin: 0 auto;
   text-align: center;
 }
 .steps {
-  background: #fce138;
+  background: var(--primary-color);
 }
 .step {
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid #39a6b2;
+  border-bottom: 1px solid var(--tertiary-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -139,7 +205,7 @@ body {
 }
 
 .step h3 {
-  color: #024e76;
+  color: var(--secondary-color);
   font-size: 46px;
   flex: 1 30%
 }
@@ -160,18 +226,18 @@ body {
   flex: 12;
 }
 .step-text p {
-    color:#39a6b2;
+    color:var(--tertiary-color);
     font-size: 18px;
 }
 .step-text h4 {
   font-size: 26px;
   line-height: 1.5;
-  color: #024e76;
+  color: var(--secondary-color);
 }
 
 .section-title {
   font-size: 48px;
-  color: #024e76;
+  color: var(--secondary-color);
   margin-bottom: 35px;
   padding-bottom: 20px;
   border-bottom: 3px solid;
@@ -180,11 +246,11 @@ body {
 }
 
 .primary-border {
-  border-color: #fce138;
+  border-color: var(--primary-color);
 }
 
 .secondary-border {
-  border-color: #39a6b2;
+  border-color: var(--tertiary-color);
 }
 .trainers {
   width: 100%;
@@ -195,8 +261,8 @@ body {
 }
 .trainer {
   margin: 20px;
-  background: #024e76;
-  color:#fce138;
+  background: var(--secondary-color);
+  color:var(--primary-color);
   flex: 1;
 }
 .trainer img {
@@ -218,10 +284,10 @@ body {
   font-size: 17px;
 }
 .contact {
-  background-color: #024e76;
+  background-color: var(--secondary-color);
 }
 .contact h2 {
-  color:#fce138;
+  color:var(--primary-color);
 }
 .contact-info {
   display: flex; 
@@ -237,23 +303,23 @@ body {
 }
 .contact-info h3 {
   font-size: 32px;
-  color:#fce138;
+  color:var(--primary-color);
 } 
 .contact-info p, address {
   font-size: 16px;
 } 
 .contact-info a {
-  color: #fce138;
+  color: var(--primary-color);
 }
 .contact-info iframe {
   height: 400px;
 }
 .contact-form input, .contact-form textarea {
-  border: 1px solid #024e76;
+  border: 1px solid var(--secondary-color);
   display: block;
   padding: 7px 15px;
   font-size: 16px;
-  color:#024e76;
+  color:var(--secondary-color);
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
@@ -261,8 +327,8 @@ body {
 .contact-form button {
   width: 100%;
   border: none;
-  background:#fce138;
-  color:#024e76;
+  background:var(--primary-color);
+  color:var(--secondary-color);
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
@@ -271,7 +337,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background: #fce138;
+  background: var(--primary-color);
   width: 100%;  
   padding: 40px 35px; 
   display: flex;
@@ -279,7 +345,7 @@ footer {
   flex-wrap: wrap;
 }
 footer h2 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
 }
 footer div {
@@ -287,7 +353,7 @@ footer div {
     text-align: right;
   }
 footer a {
-  color: #024e76;
+  color: var(--secondary-color);
 } 
 
 @media screen and (max-width: 980px) {
